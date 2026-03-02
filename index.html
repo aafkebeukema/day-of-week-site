@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day of the Week</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f9f9f9;
+      font-family: system-ui, sans-serif;
+    }
+
+    #day {
+      font-size: clamp(3rem, 15vw, 10rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <p id="day"></p>
+<script>
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  const colours = [
+    '#f8c8dc', // Sunday - soft pink
+    '#ffeb3b', // Monday - bright yellow (test)
+    '#d0e8f2', // Tuesday - light blue
+    '#dff7df', // Wednesday - light green
+    '#fff4cc', // Thursday - pale yellow
+    '#ffe0b3', // Friday - peach
+    '#e0ccff'  // Saturday - lavender
+  ];
+
+  const today = new Date().getDay();
+
+  document.getElementById('day').textContent = days[today];
+  document.body.style.background = colours[today];
+</script>
+</body>
+</html>
+
+
